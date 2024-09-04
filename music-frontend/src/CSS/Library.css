@@ -1,0 +1,24 @@
+.col-line {
+    width: 1px;
+    height: 2em;
+    background-color: #2F2739;
+}
+
+.row-line {
+    width: 100%;
+    height: 1px;
+    background-color: #2F2739;
+}
+
+.playlist {
+    border: 0.5px solid #2E2739;
+    border-radius: 10px;
+}
+
+.circle-plus {
+    margin: 0px auto;
+    width: 3em;
+    height: 3em;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}

@@ -1,0 +1,52 @@
+.song-list { 
+    border-bottom: 1px solid #333; 
+}
+
+.song-image { 
+    width: 40px; 
+    height: 40px; 
+    object-fit: cover; 
+}
+
+.song-list:hover {
+    cursor: pointer;
+    background-color: #2E2739;
+}
+
+.music-name,
+.music-singer,
+.music-topic-name {
+    color: #6c757d;
+}
+
+.music-name:hover {
+    cursor: pointer;
+    color: #9B4DE0;
+}
+
+.music-singer:hover {
+    cursor: pointer;
+    color: #9B4DE0;
+}
+
+.music-topic-name:hover {
+    cursor: pointer;
+    color: #9B4DE0;
+}
+
+.play-icon {
+    z-index: 2;
+    margin-left: -1.5em;
+    color: white;
+    box-shadow: none;
+}
+
+.playing {
+    background-color: #2E2739;
+    cursor: pointer;
+    color: #9B4DE0;
+}
+
+.music-name-playing {
+    color: #9B4DE0;
+}

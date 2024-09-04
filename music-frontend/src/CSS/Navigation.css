@@ -1,0 +1,60 @@
+.navigation-topic::-webkit-scrollbar  {
+width: 4px;  
+}
+
+.navigation-topic::-webkit-scrollbar-track {
+background: #231B2E;  
+}
+
+.navigation-topic::-webkit-scrollbar-thumb {
+background: #4ea0fe; 
+border-radius: 4px; 
+}
+  
+.navigation-topic::-webkit-scrollbar-thumb:hover  {
+background: #3a7ac5;
+}
+
+
+.navigation-topic {
+    max-height: calc(100vh - 120px - 95px);
+    overflow-y: auto;
+}
+
+
+.header-title {
+    text-align: center;
+    padding: 1rem 0;
+    margin: 0;
+    color: #fff; /* Màu chữ mặc định */
+    font-family: 'Roboto', sans-serif; /* Thay đổi phông chữ theo ý muốn */
+    font-size: 2.5rem; /* Điều chỉnh kích thước phông chữ */
+    font-weight: bold; /* Tạo chữ đậm */
+    background: linear-gradient(45deg, #007bff, #28a745, #fd7e14, #f06595); /* Thay đổi màu gradient */
+    background-size: 400% 400%; /* Tạo không gian cho gradient di chuyển */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Tăng độ mờ của bóng chữ */
+    animation: gradientShift 4s ease infinite; /* Thay đổi thời gian animation */
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+.header-title:hover {
+    color: #ff4d6d; /* Màu khi di chuột qua */
+    transform: scale(1.1);
+}
+.side-bar-devide {
+    margin: 1em 1em;
+    width: 80%;
+    height: 1px;
+    background-color: #2e2739;
+    text-align: center;
+}
