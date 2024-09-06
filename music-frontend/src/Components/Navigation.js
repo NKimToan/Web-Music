@@ -11,9 +11,9 @@ function Navigation() {
     return (
         <>
             <Link
-                to="/"
+                to=""
                 style={{ textDecoration: "none" }}
-                onClick={() => setItemSelected("/")}
+                onClick={() => setItemSelected("")}
                 className="mt-0">
                 <h2 className="text-center pt-4 pb-4 mb-0 header-title" style={{ color: "#4ea0fe" }}>Web Music</h2>
             </Link>
@@ -36,7 +36,7 @@ function Navigation() {
                             <span className="ms-3">Thư viện</span>
                         </ListGroup.Item>
                     </Link>
-                    <Link to="/" style={{ textDecoration: "none" }}>
+                    <Link to="" style={{ textDecoration: "none" }}>
                         <ListGroup.Item
                             action
                             className="border-0 fs-5 p-3 ps-5"

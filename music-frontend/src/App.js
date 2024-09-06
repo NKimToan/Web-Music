@@ -110,7 +110,7 @@ function App() {
                 <div className="container mt-4 content">
                   <Routes>
                     <Route path="/library" element={<Library />}></Route>
-                    <Route path="/" element={<Compact
+                    <Route path="" element={<Compact
                       musicId={musicId}
                       setMusicId={setMusicId}
                       isPlaying={isPlaying}
