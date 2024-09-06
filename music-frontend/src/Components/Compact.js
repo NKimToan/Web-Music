@@ -7,17 +7,40 @@ function Compact({ musicId, setMusicId, isPlaying, setIsPlaying, setLengthMusics
 
     document.title = "Khám phá";
     const [musics, setMusics] = useState([]);
+    const [allMusics, setAllMusics] = useState([]);
+    const [country, setCountry] = useState("all");
 
     useEffect(() => {
-        GetMusics()
-            .then(data => {
-                setMusics(data);
-            })
-            .catch(error => console.log(error));
+        if (country === "all") {
+            GetMusics()
+                .then(data => {
+                    setMusics(data);
+                    setAllMusics(data);
+                })
+                .catch(error => console.log(error));
+        } else if (country === "UK") {
+            GetMusics()
+                .then(data => {
+                    setMusics(data.filter((d) => d.topic.name === "Nhạc UK"))
+                })
+                .catch(error => console.log(error));
+        } else if (country === "VietNam") {
+            GetMusics()
+                .then(data => {
+                    setMusics(data.filter((d) => d.topic.name !== "Nhạc UK" && d.topic.name !== "Nhạc Trung"))
+                })
+                .catch(error => console.log(error));
+        } else if (country === "Chinese") {
+            GetMusics()
+                .then(data => {
+                    setMusics(data.filter((d) => d.topic.name === "Nhạc Trung"))
+                })
+                .catch(error => console.log(error));
+        }
+        setLengthMusics(allMusics[allMusics.length - 1]?.id);
+        // setLengthMusics(musics[musics.length - 1]?.id);
 
-        setLengthMusics(musics[musics.length - 1]?.id);
-
-    }, [musicId])
+    }, [musicId, country])
 
     return (
         <>
@@ -31,16 +54,32 @@ function Compact({ musicId, setMusicId, isPlaying, setIsPlaying, setLengthMusics
             </ul>
 
             <ul className="nav nav-pills mb-3">
-                <li className="nav-item me-2 pt-1 pb-1 ps-2 pe-2 fw-bold text-light" style={{ backgroundColor: "#9B4DE0", borderBlockStyle: "solid", borderRadius: "1em" }}>
+                <li
+                    className="nav-item me-2 pt-1 pb-1 ps-2 pe-2 fw-bold text-light"
+                    style={{ borderBlockStyle: "solid", borderRadius: "1em", cursor: "pointer", backgroundColor: country === "all" ? "#9B4DE0" : "" }}
+                    onClick={() => setCountry("all")}
+                >
                     <div>TẤT CẢ</div>
                 </li>
-                <li className="nav-item me-2 pt-1 pb-1 ps-2 pe-2 fw-bold text-light" style={{ borderBlockStyle: "solid", borderRadius: "1em" }}>
+                <li
+                    className="nav-item me-2 pt-1 pb-1 ps-2 pe-2 fw-bold text-light"
+                    style={{ borderBlockStyle: "solid", borderRadius: "1em", cursor: "pointer", backgroundColor: country === "VietNam" ? "#9B4DE0" : "" }}
+                    onClick={() => setCountry("VietNam")}
+                >
                     <div>VIỆT NAM</div>
                 </li>
-                <li className="nav-item me-2 pt-1 pb-1 ps-2 pe-2 fw-bold text-light" style={{ borderBlockStyle: "solid", borderRadius: "1em" }}>
+                <li
+                    className="nav-item me-2 pt-1 pb-1 ps-2 pe-2 fw-bold text-light"
+                    style={{ borderBlockStyle: "solid", borderRadius: "1em", cursor: "pointer", backgroundColor: country === "UK" ? "#9B4DE0" : "" }}
+                    onClick={() => setCountry("UK")}
+                >
                     <div>ÂU MỸ</div>
                 </li>
-                <li className="nav-item me-2 pt-1 pb-1 ps-2 pe-2 fw-bold text-light" style={{ borderBlockStyle: "solid", borderRadius: "1em" }}>
+                <li
+                    className="nav-item me-2 pt-1 pb-1 ps-2 pe-2 fw-bold text-light"
+                    style={{ borderBlockStyle: "solid", borderRadius: "1em", cursor: "pointer", backgroundColor: country === "Chinese" ? "#9B4DE0" : "" }}
+                    onClick={() => setCountry("Chinese")}
+                >
                     <div>TRUNG</div>
                 </li>
             </ul>

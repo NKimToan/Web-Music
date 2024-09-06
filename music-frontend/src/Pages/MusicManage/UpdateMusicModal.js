@@ -62,12 +62,12 @@ function UpdateMusicModal({ setIsUpdated, musics, musicId, ...props }) {
                                         </div>
                                         <div className="form-group">
                                             <label></label>
-                                            <input type="file" className="form-control" name="music" required placeholder='Cập link audio' />
+                                            <input type="file" className="form-control" required name="music" placeholder='Cập link audio' />
                                             <p>File đang được chọn: {music.music}</p>
                                         </div>
                                         <div className="form-group">
                                             <label></label>
-                                            <input type="file" className="form-control" name="image" required placeholder='Cập nhật hình ảnh' />
+                                            <input type="file" className="form-control" required name="image" placeholder='Cập nhật hình ảnh' />
                                             <p>File đang được chọn: {music.image}</p>
                                         </div>
                                         <div className="form-group">

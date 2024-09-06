@@ -14,7 +14,7 @@ function LoginWeb({ setAuthenticated }) {
     useEffect(() => {
         const accessToken = getToken();
         if (accessToken) {
-            Navigate("/");
+            Navigate("/Web-Music");
         }
     }, [Navigate]);
 
@@ -24,7 +24,7 @@ function LoginWeb({ setAuthenticated }) {
             let res = await Login(username, password);
             localStorage.setItem(ACCESS_TOKEN, res.access);
             localStorage.setItem(REFRESH_TOKEN, res.refresh);
-            Navigate("/");
+            Navigate("/Web-Music");
             setAuthenticated(false);
         } catch (err) {
             setError("Username or password incorrect")

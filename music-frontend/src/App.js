@@ -31,17 +31,12 @@ function App() {
 
   const refreshToken = async () => {
     const refresh = localStorage.getItem(REFRESH_TOKEN);
-    // console.log("refresh nè")
-    // console.log("token refresh = ", refresh)
     try {
       const res = await RefreshToken(refresh);
-      // console.log("refresh result = ", res)
       if (res.status === 200) {
-        // console.log("200 = ")
         localStorage.setItem(ACCESS_TOKEN, res.data.access);
         setIsAuthorized(true);
       } else {
-        // console.log("false = ")
         setIsAuthorized(false);
       }
     } catch (error) {
@@ -65,17 +60,13 @@ function App() {
     const refreshTokenExpiration = refreshDecoded.exp;
 
     if (tokenExpiration === now) {
-      // console.log("Trường hợp 1")
       await refreshToken()
     } else if (tokenExpiration > now) {
-      // console.log("Trường hợp 2")
       setIsAuthorized(true)
     } else if (tokenExpiration < now) {
       if (now < refreshTokenExpiration + 86300) {
-        // console.log("Trường hợp 3.1")
         await refreshToken()
       } else {
-        // console.log("Trường hợp 3.2")
         removeToken();
       }
     }

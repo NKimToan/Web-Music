@@ -49,19 +49,19 @@ function AddMusicModal({ setIsUpdated, ...props }) {
                 <Modal.Body>
                     <form onSubmit={handleSubmit} encType="multipart/form-data">
                         <div className="form-group">
-                            <label></label>
+                            <label>Name song</label>
                             <input type="text" className="form-control" name="name" required placeholder="Nhập tên bài hát" maxLength={50} />
                         </div>
                         <div className="form-group">
-                            <label></label>
+                            <label>Singer</label>
                             <input type="text" className="form-control" name="singer" required placeholder="Nhập tên ca sĩ" maxLength={50} />
                         </div>
                         <div className="form-group">
-                            <label></label>
+                            <label>Music</label>
                             <input type="file" className="form-control" name="music" required placeholder="Thêm bài hát" />
                         </div>
                         <div className="form-group">
-                            <label></label>
+                            <label>Image</label>
                             <input type="file" className="form-control" name="image" required placeholder="Thêm hình ảnh" />
                         </div>
                         <div className="form-group">
