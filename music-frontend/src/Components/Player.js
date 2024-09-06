@@ -93,7 +93,7 @@ function Player({ musicId, setMusicId, isPlaying, setIsPlaying, audioRef, length
             if (musicId !== lengthMusics) {
                 setMusicId(musicId + 1);
             } else {
-                Math.random(1, lengthMusics);
+                setMusicId(1);
             }
         }
     }
