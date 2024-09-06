@@ -11,9 +11,9 @@ function Navigation() {
     return (
         <>
             <Link
-                to=""
+                to="/Web-Music"
                 style={{ textDecoration: "none" }}
-                onClick={() => setItemSelected("")}
+                onClick={() => setItemSelected("Web-Music")}
                 className="mt-0">
                 <h2 className="text-center pt-4 pb-4 mb-0 header-title" style={{ color: "#4ea0fe" }}>Web Music</h2>
             </Link>
@@ -36,16 +36,16 @@ function Navigation() {
                             <span className="ms-3">Thư viện</span>
                         </ListGroup.Item>
                     </Link>
-                    <Link to="" style={{ textDecoration: "none" }}>
+                    <Link to="/Web-Music" style={{ textDecoration: "none" }}>
                         <ListGroup.Item
                             action
                             className="border-0 fs-5 p-3 ps-5"
                             style={{
-                                backgroundColor: itemSelected === "/" ? '#393243' : '#231B2E',
+                                backgroundColor: itemSelected === "Web-Music" ? '#393243' : '#231B2E',
                                 color: "#fff",
-                                width: itemSelected === "/" ? '98%' : '100%'
+                                width: itemSelected === "Web-Music" ? '98%' : '100%'
                             }}
-                            onClick={() => setItemSelected("/")}>
+                            onClick={() => setItemSelected("Web-Music")}>
                             <FontAwesomeIcon icon={faCompactDisc} size="1x" color="#42983B" />
                             <span className="ms-3">Khám phá</span>
                         </ListGroup.Item>
